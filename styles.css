@@ -25,7 +25,23 @@
       opacity: 0.4;
     }
   }
-  
+
+.item::before {
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgb(191, 243, 216);
+    font-size: 2rem; /* Adjust as needed */
+    font-weight: normal; /* Adjust as needed */
+    text-shadow: 2px 2px 4px rgba(40, 3, 3, 0.5); /* Optional: Adds shadow to the text for better readability */
+}
+
   .item {
     position: relative;
     width: 120px;
@@ -34,12 +50,22 @@
     background-size: cover;
     background-position: center;
     transition: margin 0.5s, transform 0.5s;
+    color: rgb(24, 49, 36); 
+    display: flex;
+    align-items: center;
+    justify-content: center;   
   
     &:nth-of-type(1) { background-image: url(./assets/static/home1.jpg); }
     &:nth-of-type(2) { background-image: url(./assets/static/home2.jpg); }
     &:nth-of-type(3) { background-image: url(./assets/static/home3.jpeg); }
     &:nth-of-type(4) { background-image: url(./assets/static/home4.jpg); }
     &:nth-of-type(5) { background-image: url(./assets/static/home5.jpeg); }
+
+    &:nth-of-type(1)::before { content: "Rails"}
+    &:nth-of-type(2)::before { content: "Bars"}
+    &:nth-of-type(3)::before { content: "Islands"}
+    &:nth-of-type(4)::before { content: "Trim"}
+    &:nth-of-type(5)::before { content: "Extras"}
   
     &:hover ~ .item {
       transform: perspective(500px) rotateY(-45deg) scale(0.95);
@@ -60,3 +86,19 @@
       transition: opacity 0.5s;
     }
   }
+
+  .call-now-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #8ac898; /* Green color */
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s;
+
+    /* Optional: Add hover effect */
+    &:hover {
+        background-color: #e75353; /* Darker green on hover */
+    }
+}
