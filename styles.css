@@ -1,4 +1,16 @@
 /* Reset styles */
+#backgroundVideo {
+    position: fixed;  /* Fixed position */
+    right: 0;
+    bottom: 0;
+    min-width: 100%;  /* Minimum width and height to cover the screen */
+    min-height: 100%;
+    z-index: -1;  /* Place it behind the content */
+    opacity: 0.3;  /* Make it very opaque */
+    object-fit: cover;  /* Resize video to cover the screen */
+}
+
+
 * {
     margin: 0;
     padding: 0;
@@ -7,6 +19,7 @@
 
 body {
     height: 100vh;
+    background-color: rgba(255, 255, 255, 0.5);  /* Semi-transparent white background */
     display: grid;
     place-items: center;
     font-family: Arial, sans-serif; /* Add a default font */
